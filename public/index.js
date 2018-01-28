@@ -1,31 +1,28 @@
 /* global CONVARGO*/
 'use strict';
 
+function capitalizeFirstLetter(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 (() => {
     const render = (actors) => {
         const fragment = document.createDocumentFragment();
 
-        // Creating a table
-        const div = document.createElement('table');
-        div.className = "table";
-        const thead = document.createElement('thead');
-        thead.innerHTML = `
-        <tr>
-            <th>Actor</th>
-            <th>Type</th>
-            <th>Amount</th>
-        </tr>
-        `;
-        div.appendChild(thead);
+        // Creating an ul in order to create cards
+        const div = document.createElement('ul');
+        div.className = "list-group mb-3";
 
         // Mapping the elements to our table
         const template = actors.map(actor => {
             return `
-        <tr>
-          <td>${actor.who}</td>
-          <td>${actor.type}</td>
-          <td>${actor.amount} $</td>
-        </tr>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">${capitalizeFirstLetter(actor.who)}</h6>
+            <small class="text-muted">${capitalizeFirstLetter(actor.type)}</small>
+          </div>
+          <span class="text-muted">${actor.amount} $</span>
+        </li>
       `;
         }).join('');
 
