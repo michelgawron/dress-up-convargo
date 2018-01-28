@@ -1,23 +1,115 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Convargo</title>
-  </head>
-  <body>
-    <div id="trucker">
-      <input class="name" type="text" placeholder="Trucker name"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-      <input class="price-by-cubic" type="number" placeholder="Price by m3"/>
+<head>
+    <title>Convargo payment sheet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <style>
+        #my_buttons_centered {
+            margin-right: 0px;
+        }
+
+        .my_buttons {
+            margin: 5px;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .row {
+            margin-top: 5px;
+            border: black;
+        }
+
+        .btn-block {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="esilv-logo.png" alt="" width="125" height="125">
+        <h2>Convargo billing app</h2>
+        <p class="lead">Hello and welcome inside the Convargo billing app ! Please fill out the form below in order to
+            ge tan estimation of your delivery costs.</p>
     </div>
-    <div id="shipper">
-      <input class="name" type="text" placeholder="Shipper name"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="volume" type="number" placeholder="Volume in m3"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
+    <div class="row">
+        <div class="col">
+            <div id="trucker">
+                <div class="input-group mb-3">
+                    <input class="form-control" id="name" type="text" placeholder="Trucker name"/>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input class="form-control" id="price-by-km" type="number" placeholder="Price by km"/>
+                    <div class="input-group-append">
+                        <span class="input-group-text">km</span>
+                    </div>
+                </div>
+
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input class="form-control" id="price-by-cubic" type="number" placeholder="Price by m3"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col">
+            <div id="shipper">
+                <div class="input-group mb-3">
+                    <input class="form-control" id="name" type="text" placeholder="Shipper name"/>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input class="form-control" id="distance" type="number" placeholder="Distance in km"/>
+                </div>
+                <div class="input-group mb-3">
+                    <input class="form-control" id="volume" type="number" placeholder="Volume in m3"/>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <button id="compute">Compute</button>
+
+    <div class="row">
+        <div class="mx-auto">
+            <div class="btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary btn-lg btn-block">
+                    <input class="option" type="checkbox" checked autocomplete="off"/>Deductible
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button id="compute" class="btn btn-primary btn-lg btn-block">Compute</button>
+    </div>
+
     <div id="actors"></div>
     <script src="convargo.js"></script>
     <script src="index.js"></script>
-  </body>
+
+
+</div>
+</div>
+</body>
 </html>

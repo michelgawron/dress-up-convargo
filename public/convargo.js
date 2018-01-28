@@ -11,9 +11,9 @@ let CONVARGO = (() => {
    */
   const getTrucker = () => {
     return {
-      'name': document.querySelector('#trucker .name').value,
-      'pricePerKm': document.querySelector('#trucker .price-by-km').value,
-      'pricePerCubic': document.querySelector('#trucker .price-by-cubic').value
+      'name': document.querySelector('#trucker #name').value,
+      'pricePerKm': document.querySelector('#trucker #price-by-km').value,
+      'pricePerCubic': document.querySelector('#trucker #price-by-cubic').value
     };
   };
 
